@@ -1,6 +1,5 @@
-# 🚀 Laravel 13 Starter Stack
+# EDU PORTAL
 
-Setup lengkap **Laravel 13** dengan **Livewire 4**, **Tailwind CSS 4**, **Spatie Laravel Permission 7**, dan **Bootstrap Icons**.
 
 ---
 
@@ -24,7 +23,7 @@ Pastikan sudah terinstal di sistem kamu:
 - PHP >= 8.3
 - Composer
 - Node.js >= 18 & NPM
-- Database (MySQL / PostgreSQL / SQLite)
+- Database (MySQL)
 
 ---
 
@@ -35,18 +34,10 @@ Pastikan sudah terinstal di sistem kamu:
 **Jika clone dari repositori:**
 
 ```bash
-git clone https://github.com/username/nama-repo.git
+git clone https://github.com/agilPrayoga/laravel13.git
 cd nama-repo
 ```
 
-**Jika buat project baru:**
-
-```bash
-composer create-project laravel/laravel nama-project
-cd nama-project
-```
-
----
 
 ### 2. Install Semua Dependency (Otomatis)
 
@@ -54,7 +45,7 @@ Perintah ini secara otomatis akan:
 
 1. `composer install` — install semua PHP dependency
 2. Salin `.env.example` → `.env` (jika belum ada)
-3. Generate `APP_KEY`
+3. Generate `APP_KEY` → `php artisan generate:key`
 4. Jalankan `php artisan migrate:fresh --seed`
 5. `npm install` — install semua Node dependency
 6. `npm run build` — build asset untuk production

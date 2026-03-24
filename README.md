@@ -1,6 +1,5 @@
 # EDU PORTAL
 
-
 ---
 
 ## 📦 Tech Stack
@@ -38,23 +37,7 @@ git clone https://github.com/agilPrayoga/laravel13.git
 cd nama-repo
 ```
 
-
-### 2. Install Semua Dependency (Otomatis)
-
-Perintah ini secara otomatis akan:
-
-1. `composer install` — install semua PHP dependency
-2. Salin `.env.example` → `.env` (jika belum ada)
-3. Generate `APP_KEY` → `php artisan generate:key`
-4. Jalankan `php artisan migrate:fresh --seed`
-5. `npm install` — install semua Node dependency
-6. `npm run build` — build asset untuk production
-
-> **Catatan:** Jika setup manual, ikuti langkah 3–10 di bawah.
-
----
-
-### 3. Konfigurasi `.env` (Setup Manual)
+### 2. Konfigurasi `.env` (Setup Manual)
 
 ```bash
 cp .env.example .env
@@ -77,8 +60,25 @@ DB_PASSWORD=
 
 ---
 
+### 3. Install Semua Dependency (Otomatis)
+
+Perintah ini secara otomatis akan:
+
+1. `composer install` — install semua PHP dependency
+2. Salin `.env.example` → `.env` (jika belum ada)
+3. Generate `APP_KEY` → `php artisan generate:key`
+4. Jalankan `php artisan migrate:fresh --seed`
+5. `npm install` — install semua Node dependency
+6. `npm run build` — build asset untuk production
+
+> **Catatan:** Jika setup manual, ikuti langkah 3–10 di bawah.
+
+---
+
 ### 4. Install PHP Dependency
 
 ```bash
-composer install
+php artisan optimize
+php artisan serve
+npm run dev
 ```

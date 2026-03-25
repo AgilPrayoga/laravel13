@@ -13,6 +13,8 @@
 | Spatie Laravel Permission | ^7.2   |
 | Bootstrap Icons           | latest |
 
+## ERD ada di ERD.jpg
+
 ---
 
 ## ⚙️ Prasyarat

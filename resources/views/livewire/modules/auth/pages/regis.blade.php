@@ -1,16 +1,19 @@
 <div>
-    <div class="flex   items-center justify-center min-h-screen bg-gradient-to-r from-blue-300 to-blue-700">
+    <div class="flex   items-center justify-center min-h-screen bg-gradient-to-r from-blue-300 to-blue-700 pt-30 sm:pt-0 ">
         <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-xl">
             {{-- <h2 class="text-2xl text-blue-400 font-bold text-center">HRIS</h2> --}}
             <div class="flex justify-center items-center">
             </div>
             <div>
 
-                <form wire:submit.prevent="login" class="space-y-6">
-
+                <form wire:submit="store" class="space-y-6">
+                    <a wire:navigate href="{{ route('login') }}">
+                        <p class="text-blue-400"><i class="bi bi-arrow-left"></i></p>
+                    </a>
+                    <h1>Registrasi</h1>
                     <div>
                         <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                        <input type="text" id="username" wire:model.defer="username" required placeholder="Masukan : username"
+                        <input type="text" id="username" wire:model.defer="username" required placeholder="Masukan username"
                             class="w-full  px-3 py-2 mt-1 border border-gray-500 rounded-lg focus:outline-none focus:ring focus:ring-blue-200">
                     </div>
                     <div>
@@ -20,7 +23,7 @@
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" wire:model.defer="fullname" required placeholder="Masukan Email"
+                        <input type="email" id="email" wire:model.defer="email" required placeholder="Masukan Email"
                             class="w-full  px-3 py-2 mt-1 border border-gray-500 rounded-lg focus:outline-none focus:ring focus:ring-blue-200">
                     </div>
                     <div>
@@ -40,7 +43,7 @@
                     </div>
                     <div>
                         <label for="password" class="block text-sm font-medium text-gray-700">Konfirmasi Password</label>
-                        <livewire:components.password-input wire:model.defer="password-confirmation" />
+                        <livewire:components.password-input wire:model.defer="password_confirmation" />
 
                     </div>
                     <div>

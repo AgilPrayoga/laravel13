@@ -20,6 +20,8 @@
 <body class="font-outfit">
 
     <livewire:templates.topbar.pages.guest-topbar />
+    {{-- Alert --}}
+    <livewire:components.alert />
 
     {{ $slot }}
     @livewireScripts

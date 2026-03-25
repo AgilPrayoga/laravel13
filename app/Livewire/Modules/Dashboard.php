@@ -2,23 +2,23 @@
 
 namespace App\Livewire\Modules;
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\Course;
+use App\Models\User;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
-    public function logout()
+
+    public $courses_count;
+    public $users_count;
+
+    public function mount()
     {
-        Auth::logout();
-
-        session()->invalidate();
-        session()->regenerateToken();
-
-        return redirect()->route('login')
-            ->with('warning', 'Anda telah logout.');
+        $this->courses_count = Course::count();
+        $this->users_count = User::count();
     }
     public function render()
     {
-        return view('livewire.modules.dashboard');
+        return view('livewire.modules.dashboard.pages.dashboard');
     }
 }

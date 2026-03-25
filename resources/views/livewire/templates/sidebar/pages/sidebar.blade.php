@@ -25,7 +25,7 @@
                 <div>
 
                     {{-- Beranda --}}
-                    <a href="#"
+                    <a wire:navigate href="{{ route('dashboard') }}"
                         class="block  p-3 rounded-xl hover:bg-gray-200 active:bg-blue-200 active:text-blue-400 {{ request()->routeIs('dashboard') ? 'bg-blue-100 text-blue-500' : '' }} transition">
                         <i class="mr-2 bi bi-grid"></i>
                         @if ($sidebarOpen)

@@ -2,28 +2,24 @@
 
 namespace App\Livewire\Modules\Dashboard\Pages;
 
+use App\Models\Course;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
-    public function logout()
-    {
-        Auth::logout();
-
-        session()->invalidate();
-        session()->regenerateToken();
-
-        return redirect()->route('login')
-            ->with('warning', 'Anda telah logout.');
-    }
+    public $courses_count;
+    public $users_count;
 
     public function mount()
     {
+        $this->courses_count = Course::count();
+        $this->users_count = User::count();
         $this->dispatch(
             'updateBreadcrumb',
-            icon: 'grid',
-            title: 'Dashboard',
+            icon: 'highlighter',
+            title: 'Manajemen Kursus',
             subtitle: '',
             routePrefix: ''
         );
